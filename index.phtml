@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>OOP Shapes</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 <script src="js/main.js"></script>
+</head>
+
+<body>
+	<section class="workshop">
+		<h1>Let's create a figure</h1>
+
+		<form action="index.php" method="POST">
+		<fieldset class="figureCreator">
+
+
+			<select id="shapes" name="shapes" required>
+				<option disabled selected value>Choose a figure</option>
+				<option value="rectangle">Rectangle</option>
+			  	<option value="square">Square</option>
+			  	<option value="triangle">Triangle</option>
+			  	<option value="elipse">Elipse</option>
+			  	<option value="circle">Circle</option>
+			</select>
+		</fieldset>
+
+		<fieldset class="points figureCreator">
+
+
+		</fieldset>
+
+		<fieldset class="figureCreator">
+			<legend>Where do you want your shape to be?</legend>
+			<input type="number" name="coordx" placeholder="coordonate X">
+			<input type="number" name="coordy" placeholder="coordonate Y">
+
+
+			<label for="opacity"> Choose the opacity (number between 0 - 1) </label>
+			<input id="opacity" type="number" name="opacity" maxlength="3" value="1" min="0" max="1">
+
+			<label for="fill"> Choose a filling color </label>
+			<input id="fill" type="color" name="color" value="#4aafd7">
+
+			<label for="line"> Choose a line color </label>
+			<input id="line" type="color" name="colorLine" value="#000">
+
+			<label for="linewidth"> Choose the line width </label>
+			<input id="linewidth" type="number" name="linewidth" maxlength="2" value="0">
+
+			<label for="rotation"> Choose the rotation degree (number between 0 - 360) </label>
+			<input id="rotation" type="number" name="rotation" maxlength="3" value="0">
+
+			<input type="submit" name="submit">
+
+		</fieldset>
+		</form>
+	</section>
+
+	<section class="paint-container">
+		<svg id="svg" class="paint-area" width="800" height="500">
+
+			<?php if ($_POST) : ?>
+				<?= $shape->draw() ?>
+			<?php endif ?>
+
+		</svg>
+	</section>
+
+
+
+</body>
+</html>

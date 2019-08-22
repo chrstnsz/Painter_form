@@ -1,0 +1,45 @@
+label {
+	padding: .5rem 0 ;
+}
+
+input {
+	margin: .5rem 0;
+}
+
+h1{
+	text-align: center;
+}
+
+section {
+	display: inline-block;
+    vertical-align: top;
+
+}
+.workshop {
+	width: 79%;
+	padding: 1rem;
+	border:solid turquoise;
+	width: 350px;
+}
+
+.paint-container {
+	width: 20%;
+}
+
+.paint-area {
+	height: 100vh;
+}
+
+.figureCreator{
+	display: flex;
+	flex-flow: column, nowrap;
+	border: none;
+}
+
+#linewidth, #opacity {
+	width: 25px;
+}
+
+[type=submit]{
+	margin-top: 1rem;
+}
